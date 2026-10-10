@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-10",
+  "review_timezone": "Europe/Dublin",
+  "entries": [
+    {
+      "id": "github-spec-kit",
+      "name": "GitHub Spec Kit",
+      "category": "specifications",
+      "repository": "https://github.com/github/spec-kit",
+      "summary": "Structured development processes and templates, with an explicitly documented IBM Bob integration.",
+      "publisher_type": "organization",
+      "license": "MIT",
+      "license_evidence": "https://github.com/github/spec-kit",
+      "availability": "public-source",
+      "installation": "documented",
+      "bob_relation": "explicit-integration",
+      "review_status": "documentation-reviewed",
+      "reviewed_on": "2026-10-10",
+      "runtime_evidence": [],
+      "notes": [
+        "The documented Bob integration uses .bob/skills/speckit-<command>/SKILL.md by default.",
+        "The integration guide distinguishes current skills from the deprecated Bob 1.x commands layout."
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/github/spec-kit",
+          "supports": "Public source, project purpose, installation instructions, and repository license."
+        },
+        {
+          "url": "https://github.github.io/spec-kit/reference/integrations.html",
+          "supports": "IBM Bob integration key, skills layout, invocation, and legacy migration."
+        }
+      ]
+    },
+    {
+      "id": "ibm-intro-bob-workshop",
+      "name": "IBM Bob Workshops",
+      "category": "learning",
+      "repository": "https://github.com/IBM/intro-bob-workshop",
+      "summary": "Workshop source and exercises covering Bob usage, rules, skills, MCP, and team workflows.",
+      "publisher_type": "organization",
+      "license": "Apache-2.0",
+      "license_evidence": "https://github.com/IBM/intro-bob-workshop",
+      "availability": "public-source",
+      "installation": "documented",
+      "bob_relation": "bob-example",
+      "review_status": "documentation-reviewed",
+      "reviewed_on": "2026-10-10",
+      "runtime_evidence": [],
+      "notes": [
+        "Contains an agent-with-bob-shell skill alongside workshop materials.",
+        "Different labs have different audiences; the power-user workshop targets IBM employees."
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/IBM/intro-bob-workshop",
+          "supports": "Public files, workshop scope, audience, and Apache-2.0 license."
+        },
+        {
+          "url": "https://ibm.github.io/intro-bob-workshop/lab-7/",
+          "supports": "Power-user exercises for rules, skills, MCP, and team workflows."
+        }
+      ]
+    },
+    {
+      "id": "ibm-bob-demo",
+      "name": "IBM Bob Demos",
+      "category": "learning",
+      "repository": "https://github.com/IBM/bob-demo",
+      "summary": "Task examples for skills, documentation indexing, architecture, modernization, and DevOps.",
+      "publisher_type": "organization",
+      "license": "Apache-2.0",
+      "license_evidence": "https://github.com/IBM/bob-demo",
+      "availability": "public-source",
+      "installation": "documented",
+      "bob_relation": "bob-example",
+      "review_status": "documentation-reviewed",
+      "reviewed_on": "2026-10-10",
+      "runtime_evidence": [],
+      "notes": [
+        "The reviewed README still names earlier modes such as Code, Advanced, and Orchestrator.",
+        "The repository describes itself as an open-source project rather than a supported IBM product."
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/IBM/bob-demo",
+          "supports": "Examples, clone instructions, older mode names, license, and public-repository support disclosure."
+        }
+      ]
+    },
+    {
+      "id": "bob-plus-building-blocks",
+      "name": "Bob+ Technology Building Blocks",
+      "category": "skills",
+      "repository": "https://github.com/ibm-self-serve-assets/building-blocks",
+      "summary": "IBM Build Engineering reference implementations, integration assets, and Bob skills and modes.",
+      "publisher_type": "organization",
+      "license": "Apache-2.0",
+      "license_evidence": "https://github.com/ibm-self-serve-assets/building-blocks",
+      "availability": "public-source",
+      "installation": "documented",
+      "bob_relation": "bob-extension",
+      "review_status": "documentation-reviewed",
+      "reviewed_on": "2026-10-10",
+      "runtime_evidence": [],
+      "notes": [
+        "A public skills ZIP is visible; its contents were not executed.",
+        "VSIX installation is documented, but this review did not verify a downloadable VSIX package."
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/ibm-self-serve-assets/building-blocks",
+          "supports": "Public source, project scope, and Apache-2.0 license."
+        },
+        {
+          "url": "https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills.zip",
+          "supports": "Public skills ZIP file."
+        },
+        {
+          "url": "https://ibm-self-serve-assets.github.io/building-blocks-docs/ai-core/bob-skills-and-modes/",
+          "supports": "Skills installation locations and domain coverage."
+        },
+        {
+          "url": "https://ibm-self-serve-assets.github.io/building-blocks-docs/ibm-bob/extension/install/",
+          "supports": "Documented VSIX installation workflow, not runtime verification."
+        }
+      ]
+    },
+    {
+      "id": "bob-skill-installer",
+      "name": "bob-skill-installer",
+      "category": "distribution",
+      "repository": "https://github.com/funhere/bob-skill-installer",
+      "summary": "A community Python tool for fetching, converting, validating, and installing third-party skills into Bob.",
+      "publisher_type": "community",
+      "license": "Apache-2.0",
+      "license_evidence": "https://github.com/funhere/bob-skill-installer",
+      "availability": "public-source",
+      "installation": "documented",
+      "bob_relation": "bob-extension",
+      "review_status": "documentation-reviewed",
+      "reviewed_on": "2026-10-10",
+      "runtime_evidence": [],
+      "notes": [
+        "Documents project/global targets, dry runs, and upgrade backups.",
+        "Its documented default preserves source secret files unless excluded; inspect options before use."
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/funhere/bob-skill-installer",
+          "supports": "Public Python implementation, installation options, secret-file behavior, and license."
+        }
+      ]
+    },
+    {
+      "id": "onboardops",
+      "name": "OnboardOps",
+      "category": "onboarding",
+      "repository": "https://github.com/rohan879/OnboardOps",
+      "summary": "A community onboarding workflow combining Bob instructions, skills, an MCP server, and a repository-learning dashboard.",
+      "publisher_type": "community",
+      "license": "MIT",
+      "license_evidence": "https://github.com/rohan879/OnboardOps",
+      "availability": "public-source",
+      "installation": "not-assessed",
+      "bob_relation": "bob-extension",
+      "review_status": "documentation-reviewed",
+      "reviewed_on": "2026-10-10",
+      "runtime_evidence": [],
+      "notes": [
+        "The README identifies the project as a Bob hackathon submission.",
+        "Treat its custom-mode representation as project-specific until checked against the installed Bob version."
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/rohan879/OnboardOps",
+          "supports": "Public source, onboarding components, hackathon origin, and MIT license."
+        }
+      ]
+    },
+    {
+      "id": "debug-swarm",
+      "name": "Debug Swarm",
+      "category": "debugging",
+      "repository": "https://github.com/Gabriel-ASM/IBM-Bob-Hackathon",
+      "summary": "A community debugging workflow with focused investigators, run artifacts, a dashboard, and a planted-bug benchmark.",
+      "publisher_type": "community",
+      "license": "MIT",
+      "license_evidence": "https://github.com/Gabriel-ASM/IBM-Bob-Hackathon",
+      "availability": "public-source",
+      "installation": "documented",
+      "bob_relation": "bob-extension",
+      "review_status": "documentation-reviewed",
+      "reviewed_on": "2026-10-10",
+      "runtime_evidence": [],
+      "notes": [
+        "The repository documents a seven-phase debugging skill and replayable reference runs.",
+        "Upstream test counts and benchmark outcomes have not been independently reproduced by this catalogue."
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/Gabriel-ASM/IBM-Bob-Hackathon",
+          "supports": "Public source, workflow components, quick-start instructions, and MIT license."
+        }
+      ]
+    }
+  ]
+}
