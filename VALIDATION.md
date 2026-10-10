@@ -25,6 +25,8 @@ The command checks metadata and inline local Markdown paths/headings. It does no
 
 ## Hosted CI and publication
 
-The [GitHub Actions workflow](.github/workflows/validate.yml) is a definition until it runs on the published repository. It uses the official [checkout](https://github.com/actions/checkout) and [setup-python](https://github.com/actions/setup-python) actions pinned to v7 commit references, read-only repository permissions, and no Bob credentials.
+The [GitHub Actions workflow](.github/workflows/validate.yml) uses the official [checkout](https://github.com/actions/checkout) and [setup-python](https://github.com/actions/setup-python) actions pinned to v7 commit references, read-only repository permissions, and no Bob credentials.
 
-This local preparation record contains no hosted CI results. The catalogue and companion repositories are now public; publication does not change their runtime-evidence labels.
+[GitHub Actions run 38008136347](https://github.com/Saqlain1999/awesome-bob-workflows/actions/runs/38008136347) completed successfully for published commit `c57876a4e6c3d1a8f894c795d12bf99fa63068ce` on 10 October 2026 (UTC). The `catalogue` job passed on `ubuntu-latest` with Python 3.12. This validates the catalogue's own metadata and local links; it does not install or execute any listed project.
+
+The catalogue and companion repositories are now public. Publication and catalogue CI do not change the listed projects' runtime-evidence labels.
