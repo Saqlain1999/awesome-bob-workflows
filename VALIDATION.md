@@ -31,6 +31,6 @@ The [GitHub Actions workflow](.github/workflows/validate.yml) uses the official 
 
 [GitHub Actions run 38008136347](https://github.com/Saqlain1999/awesome-bob-workflows/actions/runs/38008136347) completed successfully for published commit `c57876a4e6c3d1a8f894c795d12bf99fa63068ce` on 10 October 2026 (UTC). The `catalogue` job passed on `ubuntu-latest` with Python 3.12. This validates the catalogue's own metadata and local links; it does not install or execute any listed project.
 
-That hosted run predates the expanded comparison content. No hosted CI result for this update is recorded here yet.
+That hosted run predates the expanded comparison content. The expansion passed [GitHub Actions run 38027939652](https://github.com/Saqlain1999/awesome-bob-workflows/actions/runs/38027939652) for commit `d88cacdb4ca3c06ad43375182d932a8fedd9e05a` on 10 October 2026 (UTC). The Ubuntu/Python 3.12 catalogue job and its **Check metadata and local links** step completed successfully. This remains catalogue validation, not execution of the listed projects.
 
 The catalogue and companion repositories are now public. Publication and catalogue CI do not change the listed projects' runtime-evidence labels.
