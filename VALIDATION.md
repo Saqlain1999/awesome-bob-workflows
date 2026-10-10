@@ -4,22 +4,24 @@ Prepared 10 October 2026 (Europe/Dublin).
 
 ## Source review
 
-The seven initial entries were reviewed using the primary sources recorded in [catalog/projects.json](catalog/projects.json). Repository availability, documented features, and license labels were inspected. No listed project was installed or executed by this catalogue, and no live Bob compatibility is claimed.
+The catalogue now contains ten entries, including Verified Codebase Context, Bob Control, and Headless Bob. Primary sources are recorded in [catalog/projects.json](catalog/projects.json); the [comparison review](docs/comparison-review.md) identifies inspected commits and limitations. Commit identifiers were confirmed through GitHub commit endpoints. Repository availability, documented features, representative implementation, and license scopes were inspected. No listed project was installed or executed by this catalogue, and no live Bob compatibility is claimed.
 
-The public skills ZIP for Bob+ was visible. A downloadable VSIX package was not verified. Upstream test totals, performance numbers, and runtime outcomes were not independently reproduced.
+The Bob+ tree contains a skills ZIP and `bob-plus-assets-1.1.0.vsix`; neither was executed, and the binary was not downloaded. The review records its root Apache-2.0 and skills-subtree MIT notices, documentation drift, and the skill installer's source-level backup mismatch. Upstream test totals, performance numbers, and runtime outcomes were not independently reproduced. Maintainer execution reports remain attributed source links rather than structured catalogue runtime records.
 
 ## Local checks
 
 Executed on Linux with Python **3.12.14** during preparation. Python 3.10 is the source compatibility target; no Python 3.10 execution is claimed.
 
-`python3 tools/validate_catalog.py` exited **0** and reported:
+`python3 tools/validate_catalog.py` exited **0** after the comparison update and reported:
 
 ```text
-Validated 7 project entries, 10 Markdown files, and 22 local links.
+Validated 10 project entries, 11 Markdown files, and 29 local links.
 External sources and Bob runtime behavior were not tested by this command.
 ```
 
-An additional in-memory/disposable-fixture check confirmed rejection of four invalid cases: a runtime claim without evidence, a duplicate project, a credential-bearing source URL, and missing local file/heading targets. It exited **0**. No upstream installer, model, or work repository was used.
+`git diff --check` also exited **0**. No validator source change or upstream execution was required for these content updates.
+
+During initial preparation, an additional in-memory/disposable-fixture check confirmed rejection of four invalid cases: a runtime claim without evidence, a duplicate project, a credential-bearing source URL, and missing local file/heading targets. It exited **0**. No upstream installer, model, or work repository was used. The comparison update changes catalogue content and documentation; the validator implementation is unchanged.
 
 The command checks metadata and inline local Markdown paths/headings. It does not fetch external links or establish that their contents remain accurate. Repository URLs and technical facts need human review.
 
@@ -28,5 +30,7 @@ The command checks metadata and inline local Markdown paths/headings. It does no
 The [GitHub Actions workflow](.github/workflows/validate.yml) uses the official [checkout](https://github.com/actions/checkout) and [setup-python](https://github.com/actions/setup-python) actions pinned to v7 commit references, read-only repository permissions, and no Bob credentials.
 
 [GitHub Actions run 38008136347](https://github.com/Saqlain1999/awesome-bob-workflows/actions/runs/38008136347) completed successfully for published commit `c57876a4e6c3d1a8f894c795d12bf99fa63068ce` on 10 October 2026 (UTC). The `catalogue` job passed on `ubuntu-latest` with Python 3.12. This validates the catalogue's own metadata and local links; it does not install or execute any listed project.
+
+That hosted run predates the expanded comparison content. No hosted CI result for this update is recorded here yet.
 
 The catalogue and companion repositories are now public. Publication and catalogue CI do not change the listed projects' runtime-evidence labels.

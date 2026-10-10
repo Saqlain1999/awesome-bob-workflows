@@ -4,6 +4,8 @@
 
 Include public projects that help people use IBM Bob for development workflows: specifications, skills, setup, repository onboarding, investigation, verification, and repeatable examples. A general tool can qualify when a primary source explicitly documents its Bob integration.
 
+A preset or extension for such a tool can qualify when its host relationship is clear. Cite both the extension's contract and the host's Bob integration, and label any missing Bob-specific execution evidence. Host integration alone does not establish that the extension works with Bob. Native Bob features belong in the product-reference section, separate from open-source package entries.
+
 Prefer a small useful entry over a long list of names. Each entry should answer what it provides, why it belongs here, what can be inspected, and what remains unverified.
 
 ## Inclusion evidence

@@ -20,10 +20,10 @@ The editable [project template](../templates/project-entry.json) contains placeh
 | `id` | Unique lowercase slug containing letters, digits, and single hyphens |
 | `name` | Upstream project name |
 | `category` | One of `specifications`, `learning`, `skills`, `distribution`, `onboarding`, `debugging`, `orchestration`, or `evaluation` |
-| `repository` | Public HTTPS source repository URL; no credentials |
+| `repository` | Public HTTPS source repository URL; a distinct application in a larger repository may use its source-subdirectory URL; no credentials |
 | `summary` | Original factual one-sentence description |
 | `publisher_type` | `organization` or `community`; describes the publisher, not endorsement |
-| `license` | Observed SPDX identifier, or `NOASSERTION` if it cannot be established |
+| `license` | Observed SPDX identifier or expression, or `NOASSERTION` if it cannot be established; explain separate asset scopes in `notes` |
 | `license_evidence` | Primary HTTPS page supporting the license observation |
 | `availability` | `public-source` for this initial catalogue format |
 | `installation` | `documented` or `not-assessed`; never means independently installed |
@@ -35,6 +35,8 @@ The editable [project template](../templates/project-entry.json) contains placeh
 | `sources` | Primary HTTPS URLs paired with a `supports` description of the relevant claim |
 
 Source evidence must include the repository and the page used for the license observation. A full Bob version or product support level is not inferred from the existence of a similarly named configuration directory.
+
+Record the reviewed source revision in `notes` and use commit-pinned URLs in `sources` when available. The existing schema does not have a separate source-review revision field. A release tag or main snapshot describes the inspected material, not a compatibility result. When the Bob relationship is through a host tool such as Spec Kit, name that relationship explicitly and state whether the extension itself has been exercised with Bob.
 
 ## Runtime reports
 
@@ -51,7 +53,7 @@ Each runtime report has these fields:
 | `result` | `passed`, `partial`, or `failed` |
 | `evidence_url` | Public HTTPS report with commands, outcomes, and limitations |
 
-A linked report is attributable evidence, not a claim that the catalogue maintainers repeated it. No runtime reports are included in the initial catalogue.
+A linked report is attributable evidence, not a claim that the catalogue maintainers repeated it. No structured runtime reports are currently included. A maintainer report can be listed as a source with explicit attribution without being promoted to `runtime-report-linked` until its exact version, revision, environment, task and result have been assessed against these fields.
 
 ## Validator limits
 

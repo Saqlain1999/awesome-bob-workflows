@@ -4,21 +4,31 @@ A curated guide to public IBM Bob workflows, skills, learning material, and inte
 
 This is an independent community catalogue. It is not an IBM product, an official marketplace, or a certification programme. Entries are selected for relevance and inspectable evidence; inclusion is not an endorsement or a guarantee that a project will work in your environment.
 
-**Source review: 10 October 2026 (Europe/Dublin).** All seven initial project entries are based on public documentation and repository inspection. None has been installed or run with Bob by this catalogue. The machine-readable [catalogue](catalog/projects.json) records the evidence and review date for each entry.
+**Source review: 10 October 2026 (Europe/Dublin).** The ten project entries are based on public documentation and repository inspection. None has been installed or run with Bob by this catalogue. The machine-readable [catalogue](catalog/projects.json) records the evidence and review date for each entry. The [comparison review](docs/comparison-review.md) records source revisions, overlap, and important limitations.
 
 ## Find a useful starting point
 
 | Your goal | Start with |
 | --- | --- |
+| Recover or manage an existing Bob session | [Native Bob first](#native-bob-first) |
 | Learn the extension points and see examples | [Official references](#official-references), IBM Bob Workshops, and IBM Bob Demos |
-| Turn a substantial feature into a specification and plan | GitHub Spec Kit |
+| Structure a feature or a scoped bug fix | GitHub Spec Kit |
+| Maintain evidence-qualified repository context for Spec Kit | Verified Codebase Context |
 | Add a domain-specific skill or integration | Bob+ Technology Building Blocks |
 | Investigate skill installation and conversion | bob-skill-installer |
+| Coordinate a shared task board and dispatch agent work | Bob Control |
+| Expose Bob through a service with sessions and cancellation | Headless Bob |
 | Explore repository onboarding as a guided experience | OnboardOps |
 | Study investigation, regression evidence, and debugging handoffs | Debug Swarm |
 | Install a small operating workflow, evaluate it, or explore a runner | [Companion projects](#companion-projects) |
 
 Follow the upstream instructions for the version you intend to use. This catalogue does not install third-party content or run commands from the linked projects.
+
+## Native Bob first
+
+Start with the features already available in your Bob client: [Shell session history, resume, and compact commands](https://bob.ibm.com/docs/shell/features/slash-commands), [context-window management](https://bob.ibm.com/docs/ide/core-concepts/context-window-management), and [IDE rollback](https://bob.ibm.com/docs/ide/features/rollback). These are IBM product features; they are not additional open-source packages in this catalogue.
+
+Restoring a conversation or a checkpoint does not establish that an old test result still applies after source or requirements change. Use an additional workflow when you need explicit task ownership, source-backed handoff, shared orchestration, or independently recorded acceptance evidence. Check [large-project guidance](https://bob.ibm.com/docs/ide/core-concepts/large-projects) before adding another layer.
 
 ## Read the status correctly
 
@@ -28,7 +38,7 @@ Three different observations matter:
 - **Installation documented:** upstream provides setup or usage instructions. Those instructions have not necessarily been executed by a catalogue contributor.
 - **Runtime evidence:** a dated report names the source revision, exact Bob version, interface, environment, task, and result. A linked report applies to that combination and task; it is not universal support.
 
-The initial entries have **documentation review only** and no runtime evidence. “Not assessed” means we did not establish a fact during this review; it does not mean the capability is absent. Repository licenses describe upstream material and do not turn every dependency or service into a free or supported product.
+All entries retain **documentation review only**. Some sources include maintainers' execution reports; this catalogue has not reproduced them or promoted them into its structured runtime-evidence records. “Not assessed” means we did not establish a fact during this review; it does not mean the capability is absent. Repository licenses describe upstream material and do not turn every dependency or service into a free or supported product.
 
 See the [curation policy](docs/curation.md) and [metadata format](docs/metadata.md) for the full definitions.
 
@@ -38,9 +48,17 @@ See the [curation policy](docs/curation.md) and [metadata format](docs/metadata.
 
 [Source](https://github.com/github/spec-kit) · [Official IBM Bob integration reference](https://github.github.io/spec-kit/reference/integrations.html) · MIT
 
-Spec Kit supplies structured development processes and reusable templates. Its integration guide explicitly lists IBM Bob under the `bob` key. The documented default writes `speckit-<command>/SKILL.md` files into `.bob/skills/` and uses `/speckit-<command>` invocation. The same guide distinguishes the deprecated Bob 1.x command layout and its migration.
+Spec Kit supplies structured development processes and reusable templates. Its integration guide explicitly lists IBM Bob under the `bob` key. The default writes `speckit-<command>/SKILL.md` files into `.bob/skills/` and uses `/speckit-<command>` invocation. The guide distinguishes the deprecated Bob 1.x command layout and migration, and documents hash-tracked installation and preservation of modified files on uninstall.
 
-Useful when a task needs a maintained specification and plan. Installation is documented; this catalogue has not executed it.
+It also includes a separate [bug workflow](https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/extensions/bug/README.md): assess, fix, and test, with per-bug reports and explicit partial/not-run verification. Useful for specifications or scoped fixes. The observed release was [v1.1.3](https://github.com/github/spec-kit/releases/tag/v1.1.3); installation and runtime dispatch were not executed here.
+
+### Verified Codebase Context
+
+[Source](https://github.com/philo-x/spec-kit-preset-codebase-memory-context) · [Reviewed v1.1.0 README](https://github.com/philo-x/spec-kit-preset-codebase-memory-context/blob/52b67e61b0ecdac0aec7c17acb0852e0355f31c1/README.md) · MIT
+
+A Spec Kit community preset for established repositories. It generates `.specify/memory/codebase.md` from repository evidence, preserves a manual overrides section, and makes plan/tasks/analyze/implement consult that context. Code graphs are optional; direct reads and search are the baseline. The generator records build and test commands without executing them.
+
+The four consumer commands replace core files and target **Spec Kit 1.1.2**; later versions require review. The documented test matrix names Codex, Claude, Copilot, and Gemini, not Bob. Its Bob connection is through Spec Kit's integration, and this catalogue has not established Bob compatibility. If using it, refer to its context from other workflows rather than maintain a second authoritative profile.
 
 ## Learning and examples
 
@@ -48,15 +66,15 @@ Useful when a task needs a maintained specification and plan. Installation is do
 
 [Source](https://github.com/IBM/intro-bob-workshop) · [Workshop site](https://ibm.github.io/intro-bob-workshop/) · Apache-2.0
 
-Workshop source, exercises, and an `agent-with-bob-shell` skill. The power-user material covers rules, skills, MCP, repository analysis, and team workflows. Labs have different audiences; the power-user workshop specifically targets IBM employees, while other material addresses external audiences.
+Workshop source, exercises, and an [agent-with-bob-shell skill](https://github.com/IBM/intro-bob-workshop/blob/352cdb45d8ad2a53b27aaa31a9248edf3bc8f2fe/.bob/skills/agent-with-bob-shell/SKILL.md) with Python Plan → Act → Evaluate loop examples. The power-user material covers rules, skills, MCP, repository analysis, and team workflows. Labs have different audiences; the power-user workshop specifically targets IBM employees, while other material addresses external audiences.
 
-Use it to learn the underlying mechanisms and adapt an appropriate exercise. Setup and usage are documented; no catalogue runtime test has been performed.
+Use it to learn the underlying mechanisms and adapt an appropriate exercise. Check current product documentation before copying version-dependent flags or mode descriptions; a workspace argument is not an OS sandbox. Setup and usage are documented; no catalogue runtime test has been performed.
 
 ### IBM Bob Demos
 
 [Source](https://github.com/IBM/bob-demo) · Apache-2.0
 
-Examples cover skills, documentation indexing, architecture work, modernization, and DevOps. Check each example's version assumptions: the reviewed README still lists earlier modes such as Code, Advanced, and Orchestrator. Its public-repository disclosure distinguishes this source project from a supported IBM product.
+Examples cover skills, documentation indexing, architecture work, modernization, and DevOps. A [Beads example](https://github.com/IBM/bob-demo/blob/bc8a8f874cd34abd6cff97bcbf863070710e7566/beads/README.md) supplies a project rule and MCP setup for persistent issue tracking. Check each example's version assumptions: the reviewed README still lists earlier modes such as Code, Advanced, and Orchestrator. Its public-repository disclosure distinguishes this source project from a supported IBM product.
 
 Useful as task examples, with installation instructions to review before trying them.
 
@@ -64,11 +82,29 @@ Useful as task examples, with installation instructions to review before trying 
 
 ### Bob+ Technology Building Blocks
 
-[Source](https://github.com/ibm-self-serve-assets/building-blocks) · [Skills documentation](https://ibm-self-serve-assets.github.io/building-blocks-docs/ai-core/bob-skills-and-modes/) · Apache-2.0
+[Source](https://github.com/ibm-self-serve-assets/building-blocks) · [Extension documentation](https://ibm-self-serve-assets.github.io/building-blocks-docs/ibm-bob/extension/install/) · Apache-2.0 at repository root; MIT for `ibm-bob/skills/`
 
-IBM Build Engineering reference implementations include integration assets and Bob skills and modes. A public [skills ZIP](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills.zip) is visible, and the documentation describes project and global skill locations.
+IBM Build Engineering reference implementations include domain skills and runnable integration assets. A public skills ZIP and [Bob+ 1.1.0 VSIX](https://github.com/ibm-self-serve-assets/building-blocks/tree/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/extension) are present. The [1.1.0 changelog](https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/extension/CHANGELOG.md) describes Building Blocks and Specs, removal of the Modes panel, and automatic configuration of required MCP servers.
 
-An [extension installation guide](https://ibm-self-serve-assets.github.io/building-blocks-docs/ibm-bob/extension/install/) describes a VSIX interface. This review did not verify a downloadable VSIX package or execute the skills. Choose relevant domain assets individually.
+The older website guide still describes modes, so use the versioned source when checking behavior. The binary was not downloaded or run here. Choose domain assets individually and review their configuration effects. Preserve [asset-level license notices](https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/skills/LICENSE.txt).
+
+## Orchestration and services
+
+### Bob Control
+
+[Source](https://github.com/PounceAI/bob-control) · [Reviewed README](https://github.com/PounceAI/bob-control/blob/315cbf54076842f06462ea8846aae837594c67cd/README.md) · Apache-2.0
+
+An MCP server, CLI, and worker around a SQLite task board. Its source includes task dependencies, notes/evidence, attempts, checkpoints, and recovery. The documented adapters cover headless Bob Shell 2.x through `bob acp`, a Bob IDE companion, and a shared board with Claude Code. All participating processes must point to the same board; the README explains that setup.
+
+This is an executable orchestration project to evaluate before writing a queue worker. It documents unattended approval and optional acceptance judging, so examine those policies for your workflow. A judge label alone is not proof that checks ran or passed; see the [review caveat](docs/comparison-review.md#bob-control-acceptance-policy). No worker or adapter was executed by this catalogue.
+
+### Headless Bob
+
+[Source](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/ai/engineering/headless-bob/assets/headlessbob) · [Reviewed README](https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ai/engineering/headless-bob/assets/headlessbob/README.md) · Apache-2.0 repository source; inspect dependency and specification notices
+
+The `headlessbob` application in Building Blocks exposes Bob through REST, Agent Communication Protocol, and MCP. The source includes sessions, SQLite run storage, cancellation, queue and output limits, a browser UI, and Python client examples. The reviewed package identifies itself as **0.4.0** and documents Node.js 22.22+ with Bob Shell 2.0.4.
+
+Its [maintainer verification record](https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ai/engineering/headless-bob/assets/headlessbob/VERIFICATION.md) distinguishes fixture checks, live Bob checks, and deployment stages. Those results were not reproduced here. The documented trust model is for trusted operators and explicitly does not provide an OS sandbox between untrusted users. Useful when a service interface is needed; it is separate from a rules-and-skills preset.
 
 ## Distribution and installation tools
 
@@ -76,9 +112,9 @@ An [extension installation guide](https://ibm-self-serve-assets.github.io/buildi
 
 [Source](https://github.com/funhere/bob-skill-installer) · Apache-2.0
 
-A community Python implementation for fetching, converting, validating, and installing skills. It documents project/global scope, dry runs, and upgrade backups.
+A community Python implementation for fetching, converting, validating, and installing skills. The reviewed package is **0.1.0**, requires Python 3.12+, and provides project/global scope and dry runs.
 
-Review the options before use: its documented default preserves source files, including secret files unless excluded. A converter's output still needs inspection for the destination Bob client's tools and behavior. Installation is documented; the catalogue has not run the tool or its scanner.
+Review the options before use: its default preserves source files, including secret files unless excluded. The README's retained-upgrade-backup claim conflicts with the [reviewed implementation and test](docs/comparison-review.md#skill-installer-backup-behavior), which remove the backup after success. A converter's output still needs inspection for the destination client's tools and behavior; a static pattern scan is not a security guarantee. Installation is documented; this catalogue has not run the tool or scanner.
 
 ## Onboarding and debugging
 
@@ -111,9 +147,15 @@ These are product references, not open-source package entries. Consult the page 
 | Working with large projects | [Large projects](https://bob.ibm.com/docs/ide/core-concepts/large-projects) |
 | Context management | [Context-window management](https://bob.ibm.com/docs/ide/core-concepts/context-window-management) |
 | Automated Shell use | [Non-interactive Bob Shell](https://bob.ibm.com/docs/shell/getting-started/start-bobshell-non-interactive) |
+| Native session continuation | [Shell slash commands](https://bob.ibm.com/docs/shell/features/slash-commands) |
+| Native file restoration | [IDE rollback](https://bob.ibm.com/docs/ide/features/rollback) |
 | Release-specific changes | [IDE changelog](https://bob.ibm.com/docs/ide/changelog) and [Shell changelog](https://bob.ibm.com/docs/shell/changelog) |
 
 Descriptions in this catalogue are original summaries. Primary links and the claims they support are also recorded in [catalog/projects.json](catalog/projects.json).
+
+## Unresolved suggestions
+
+**Propel SDLC for IBM Bob:** the exact public project repository has not been established. It has no catalogue entry until a primary source identifies the Bob-specific project and its licensing. We have not substituted a similarly named product. The unresolved link does not establish that a capability is absent or that another project is unique.
 
 ## Companion projects
 
