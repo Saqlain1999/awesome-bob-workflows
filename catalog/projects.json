@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-10-10",
+  "reviewed_on": "2026-10-14",
   "review_timezone": "Europe/Dublin",
   "entries": [
     {
@@ -11,19 +11,20 @@
       "summary": "Structured feature and bug workflows, project artifacts, and an IBM Bob skills adapter with managed installation.",
       "publisher_type": "organization",
       "license": "MIT",
-      "license_evidence": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/LICENSE",
+      "license_evidence": "https://github.com/github/spec-kit/blob/4ca46a0706a662b1edc07086ef16f021820c2db0/LICENSE",
       "availability": "public-source",
       "installation": "documented",
       "bob_relation": "explicit-integration",
       "review_status": "documentation-reviewed",
-      "reviewed_on": "2026-10-10",
+      "reviewed_on": "2026-10-14",
       "runtime_evidence": [],
       "notes": [
-        "Reviewed source revision: 0443760542e7e5269724744a2ac55c4bd386d095. No execution was performed by this catalogue.",
+        "Reviewed v1.2.0 release commit: 4ca46a0706a662b1edc07086ef16f021820c2db0. No execution was performed by this catalogue.",
         "Spec Kit's Bob integration defaults to project .bob/skills/speckit-<command>/SKILL.md with hyphenated invocation; its legacy Bob 1.x command layout is deprecated.",
         "Includes a separate assess/fix/test bug workflow with per-bug reports and partial/not-run verification states.",
         "Integration management already tracks hashes, rolls back failed installation, and preserves modified files on uninstall.",
-        "Latest observed release was v1.1.3 on 2026-10-09; the reviewed main revision is not that release commit."
+        "Latest observed release was v1.2.0, published on 2026-10-13. Its Bob adapter remains skills-first and retains the documented legacy-layout migration path.",
+        "The v1.2.0 release also adds persisted symlink policy and safer workflow-catalog cache handling. These are upstream source observations, not installation or Bob runtime evidence."
       ],
       "sources": [
         {
@@ -31,7 +32,7 @@
           "supports": "Public project source and project identity."
         },
         {
-          "url": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/LICENSE",
+          "url": "https://github.com/github/spec-kit/blob/4ca46a0706a662b1edc07086ef16f021820c2db0/LICENSE",
           "supports": "License of the reviewed source; see notes for scope."
         },
         {
@@ -39,19 +40,19 @@
           "supports": "Bob integration, layouts, migration, installation rollback and hash-tracked uninstall."
         },
         {
-          "url": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/src/specify_cli/integrations/bob/__init__.py",
+          "url": "https://github.com/github/spec-kit/blob/4ca46a0706a662b1edc07086ef16f021820c2db0/src/specify_cli/integrations/bob/__init__.py",
           "supports": "Actual Bob skill scaffolding and Shell dispatch implementation; dispatch adds trust/license flags."
         },
         {
-          "url": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/tests/integrations/test_integration_bob.py",
+          "url": "https://github.com/github/spec-kit/blob/4ca46a0706a662b1edc07086ef16f021820c2db0/tests/integrations/test_integration_bob.py",
           "supports": "Bob adapter test source, not a test run by this catalogue."
         },
         {
-          "url": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/extensions/bug/README.md",
+          "url": "https://github.com/github/spec-kit/blob/4ca46a0706a662b1edc07086ef16f021820c2db0/extensions/bug/README.md",
           "supports": "Bug stages, task-scoped reports and verification qualifications."
         },
         {
-          "url": "https://github.com/github/spec-kit/releases/tag/v1.1.3",
+          "url": "https://github.com/github/spec-kit/releases/tag/v1.2.0",
           "supports": "Observed versioned release and publication date."
         }
       ]
