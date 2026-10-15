@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-10-14",
+  "reviewed_on": "2026-10-15",
   "review_timezone": "Europe/Dublin",
   "entries": [
     {
@@ -192,7 +192,7 @@
       "name": "Bob+ Technology Building Blocks",
       "category": "skills",
       "repository": "https://github.com/ibm-self-serve-assets/building-blocks",
-      "summary": "IBM Build Engineering domain assets and a Bob+ extension for Building Blocks and Specs, with asset-specific license scopes.",
+      "summary": "IBM Build Engineering domain assets, including a Granite TTM forecasting skill, and a Bob+ extension for Building Blocks and Specs, with asset-specific license scopes.",
       "publisher_type": "organization",
       "license": "Apache-2.0 AND MIT",
       "license_evidence": "https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/LICENSE",
@@ -200,10 +200,12 @@
       "installation": "documented",
       "bob_relation": "bob-extension",
       "review_status": "documentation-reviewed",
-      "reviewed_on": "2026-10-10",
+      "reviewed_on": "2026-10-15",
       "runtime_evidence": [],
       "notes": [
         "Reviewed source revision: 5c610971dc72f9e9035821b3cb2c3edea868f8b4. No execution was performed by this catalogue.",
+        "Focused review of revision 36e24f5bbab28fac99c2a0a20deeaf2f423dd35b found the Granite TTM forecasting skill merged on 14 October 2026; broader extension and Headless Bob claims remain tied to the earlier reviewed revision.",
+        "The TTM skill documents watsonx.ai, local Hugging Face, and mock paths. The catalogue did not install it, download model weights, call a service, or reproduce its production and performance claims; the upstream skill marks its mock path as non-production.",
         "License scope: the repository root is Apache-2.0; ibm-bob/skills/LICENSE.txt specifies MIT for that subtree. Inspect individual asset/dependency notices.",
         "The public tree contains skills.zip and bob-plus-assets-1.1.0.vsix. The VSIX binary was not downloaded or executed.",
         "The 1.1.0 changelog removes the Modes panel and describes Building Blocks, Specs, and automatic MCP configuration.",
@@ -229,6 +231,14 @@
         {
           "url": "https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/extension/CHANGELOG.md",
           "supports": "Version 1.1.0 panel changes and automatic MCP configuration."
+        },
+        {
+          "url": "https://github.com/ibm-self-serve-assets/building-blocks/blob/36e24f5bbab28fac99c2a0a20deeaf2f423dd35b/ibm-bob/skills/ttm-forecasting/SKILL.md",
+          "supports": "Granite TTM skill structure, routing paths, prerequisites and stated limitations; not catalogue runtime evidence."
+        },
+        {
+          "url": "https://github.com/ibm-self-serve-assets/building-blocks/blob/36e24f5bbab28fac99c2a0a20deeaf2f423dd35b/ibm-bob/extension/config/skills.yaml",
+          "supports": "Bob+ skills configuration includes the ttm-forecasting folder without an MCP dependency."
         },
         {
           "url": "https://github.com/ibm-self-serve-assets/building-blocks/tree/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/extension",
