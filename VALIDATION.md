@@ -1,12 +1,12 @@
 # Validation record
 
-Prepared 10 October 2026 (Europe/Dublin).
+Prepared 10 October 2026; source evidence last refreshed 17 October 2026 (Europe/Dublin).
 
 ## Source review
 
-The catalogue now contains ten entries, including Verified Codebase Context, Bob Control, and Headless Bob. Primary sources are recorded in [catalog/projects.json](catalog/projects.json); the [comparison review](docs/comparison-review.md) identifies inspected commits and limitations. Commit identifiers were confirmed through GitHub commit endpoints. Repository availability, documented features, representative implementation, and license scopes were inspected. No listed project was installed or executed by this catalogue, and no live Bob compatibility is claimed.
+The catalogue now contains ten entries, including Verified Codebase Context, Bob Control, and Headless Bob. Primary sources are recorded in [catalog/projects.json](catalog/projects.json); the [comparison review](docs/comparison-review.md) identifies inspected commits and limitations. Commit identifiers were confirmed through GitHub commit endpoints. Repository availability, documented features, representative implementation, and license scopes were inspected. The 17 October refresh resolves Spec Kit's annotated `v1.2.1` tag to release commit `9dca9bf42a031765ee5e5f2371137f2f26967e11` and records its source-level workflow-capture and catalogue-trust guidance. No listed project was installed or executed by this catalogue, and no live Bob compatibility is claimed.
 
-The Bob+ tree contains a skills ZIP and `bob-plus-assets-1.1.0.vsix`; neither was executed, and the binary was not downloaded. The review records its root Apache-2.0 and skills-subtree MIT notices, documentation drift, and the skill installer's source-level backup mismatch. Upstream test totals, performance numbers, and runtime outcomes were not independently reproduced. Maintainer execution reports remain attributed source links rather than structured catalogue runtime records.
+The Bob+ tree contains a skills ZIP and `bob-plus-assets-1.1.0.vsix`; neither was executed, and the binary was not downloaded. A focused 15 October review records the Granite TTM skill merged the previous day, its three documented inference paths, and the difference between source evidence and runtime proof. A 16 October follow-up records the upstream generated catalogue entry and archive link; the archive was not downloaded, extracted, or inspected. No skill was installed, no model weights were downloaded, and no watsonx.ai or local model call was made. The review records the tree's root Apache-2.0 and skills-subtree MIT notices, documentation drift, and the skill installer's source-level backup mismatch. Upstream test totals, performance numbers, and runtime outcomes were not independently reproduced. Maintainer execution reports remain attributed source links rather than structured catalogue runtime records.
 
 ## Local checks
 

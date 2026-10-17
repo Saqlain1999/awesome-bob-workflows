@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-10-10",
+  "reviewed_on": "2026-10-17",
   "review_timezone": "Europe/Dublin",
   "entries": [
     {
@@ -11,19 +11,20 @@
       "summary": "Structured feature and bug workflows, project artifacts, and an IBM Bob skills adapter with managed installation.",
       "publisher_type": "organization",
       "license": "MIT",
-      "license_evidence": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/LICENSE",
+      "license_evidence": "https://github.com/github/spec-kit/blob/9dca9bf42a031765ee5e5f2371137f2f26967e11/LICENSE",
       "availability": "public-source",
       "installation": "documented",
       "bob_relation": "explicit-integration",
       "review_status": "documentation-reviewed",
-      "reviewed_on": "2026-10-10",
+      "reviewed_on": "2026-10-17",
       "runtime_evidence": [],
       "notes": [
-        "Reviewed source revision: 0443760542e7e5269724744a2ac55c4bd386d095. No execution was performed by this catalogue.",
+        "Reviewed v1.2.1 release commit: 9dca9bf42a031765ee5e5f2371137f2f26967e11. No execution was performed by this catalogue.",
         "Spec Kit's Bob integration defaults to project .bob/skills/speckit-<command>/SKILL.md with hyphenated invocation; its legacy Bob 1.x command layout is deprecated.",
         "Includes a separate assess/fix/test bug workflow with per-bug reports and partial/not-run verification states.",
         "Integration management already tracks hashes, rolls back failed installation, and preserves modified files on uninstall.",
-        "Latest observed release was v1.1.3 on 2026-10-09; the reviewed main revision is not that release commit."
+        "Latest observed release was v1.2.1, published on 2026-10-16. Its Bob adapter remains skills-first and retains the documented legacy-layout migration path.",
+        "The v1.2.1 release adds opt-in per-stream-limited workflow output capture with timeout/interruption fields and process-tree cleanup, plus catalogue trust and source-precedence guidance. Captured text is stored unredacted and treated as untrusted. These are upstream source observations, not installation or Bob runtime evidence."
       ],
       "sources": [
         {
@@ -31,7 +32,7 @@
           "supports": "Public project source and project identity."
         },
         {
-          "url": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/LICENSE",
+          "url": "https://github.com/github/spec-kit/blob/9dca9bf42a031765ee5e5f2371137f2f26967e11/LICENSE",
           "supports": "License of the reviewed source; see notes for scope."
         },
         {
@@ -39,19 +40,19 @@
           "supports": "Bob integration, layouts, migration, installation rollback and hash-tracked uninstall."
         },
         {
-          "url": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/src/specify_cli/integrations/bob/__init__.py",
+          "url": "https://github.com/github/spec-kit/blob/9dca9bf42a031765ee5e5f2371137f2f26967e11/src/specify_cli/integrations/bob/__init__.py",
           "supports": "Actual Bob skill scaffolding and Shell dispatch implementation; dispatch adds trust/license flags."
         },
         {
-          "url": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/tests/integrations/test_integration_bob.py",
+          "url": "https://github.com/github/spec-kit/blob/9dca9bf42a031765ee5e5f2371137f2f26967e11/tests/integrations/test_integration_bob.py",
           "supports": "Bob adapter test source, not a test run by this catalogue."
         },
         {
-          "url": "https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/extensions/bug/README.md",
+          "url": "https://github.com/github/spec-kit/blob/9dca9bf42a031765ee5e5f2371137f2f26967e11/extensions/bug/README.md",
           "supports": "Bug stages, task-scoped reports and verification qualifications."
         },
         {
-          "url": "https://github.com/github/spec-kit/releases/tag/v1.1.3",
+          "url": "https://github.com/github/spec-kit/releases/tag/v1.2.1",
           "supports": "Observed versioned release and publication date."
         }
       ]
@@ -191,7 +192,7 @@
       "name": "Bob+ Technology Building Blocks",
       "category": "skills",
       "repository": "https://github.com/ibm-self-serve-assets/building-blocks",
-      "summary": "IBM Build Engineering domain assets and a Bob+ extension for Building Blocks and Specs, with asset-specific license scopes.",
+      "summary": "IBM Build Engineering domain assets, including a Granite TTM forecasting skill, and a Bob+ extension for Building Blocks and Specs, with asset-specific license scopes.",
       "publisher_type": "organization",
       "license": "Apache-2.0 AND MIT",
       "license_evidence": "https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/LICENSE",
@@ -199,10 +200,13 @@
       "installation": "documented",
       "bob_relation": "bob-extension",
       "review_status": "documentation-reviewed",
-      "reviewed_on": "2026-10-10",
+      "reviewed_on": "2026-10-16",
       "runtime_evidence": [],
       "notes": [
         "Reviewed source revision: 5c610971dc72f9e9035821b3cb2c3edea868f8b4. No execution was performed by this catalogue.",
+        "Focused review of revision 36e24f5bbab28fac99c2a0a20deeaf2f423dd35b found the Granite TTM forecasting skill merged on 14 October 2026; broader extension and Headless Bob claims remain tied to the earlier reviewed revision.",
+        "Focused follow-up at f422bb7b98614fdc1fff08a8fb800c86eee5c66f found an active generated catalogue entry and downloadable ZIP for ttm-forecasting. The archive was not downloaded, extracted, or installed.",
+        "The TTM skill documents watsonx.ai, local Hugging Face, and mock paths. The catalogue did not install it, download model weights, call a service, or reproduce its production and performance claims; the upstream skill marks its mock path as non-production.",
         "License scope: the repository root is Apache-2.0; ibm-bob/skills/LICENSE.txt specifies MIT for that subtree. Inspect individual asset/dependency notices.",
         "The public tree contains skills.zip and bob-plus-assets-1.1.0.vsix. The VSIX binary was not downloaded or executed.",
         "The 1.1.0 changelog removes the Modes panel and describes Building Blocks, Specs, and automatic MCP configuration.",
@@ -228,6 +232,18 @@
         {
           "url": "https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/extension/CHANGELOG.md",
           "supports": "Version 1.1.0 panel changes and automatic MCP configuration."
+        },
+        {
+          "url": "https://github.com/ibm-self-serve-assets/building-blocks/blob/36e24f5bbab28fac99c2a0a20deeaf2f423dd35b/ibm-bob/skills/ttm-forecasting/SKILL.md",
+          "supports": "Granite TTM skill structure, routing paths, prerequisites and stated limitations; not catalogue runtime evidence."
+        },
+        {
+          "url": "https://github.com/ibm-self-serve-assets/building-blocks/blob/36e24f5bbab28fac99c2a0a20deeaf2f423dd35b/ibm-bob/extension/config/skills.yaml",
+          "supports": "Bob+ skills configuration includes the ttm-forecasting folder without an MCP dependency."
+        },
+        {
+          "url": "https://github.com/ibm-self-serve-assets/building-blocks/blob/f422bb7b98614fdc1fff08a8fb800c86eee5c66f/explore-BBs/bb-catalog/skills/ttm-forecasting.md",
+          "supports": "Generated active catalogue entry, canonical source directory, sub-skill names and generated archive URL; not archive inspection or installation evidence."
         },
         {
           "url": "https://github.com/ibm-self-serve-assets/building-blocks/tree/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/extension",
