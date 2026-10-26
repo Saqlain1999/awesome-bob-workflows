@@ -4,7 +4,7 @@ A curated guide to public IBM Bob workflows, skills, learning material, and inte
 
 This is an independent community catalogue. It is not an IBM product, an official marketplace, or a certification programme. Entries are selected for relevance and inspectable evidence; inclusion is not an endorsement or a guarantee that a project will work in your environment.
 
-**Source review: 10 October 2026 (Europe/Dublin).** The ten project entries are based on public documentation and repository inspection. None has been installed or run with Bob by this catalogue. The machine-readable [catalogue](catalog/projects.json) records the evidence and review date for each entry. The [comparison review](docs/comparison-review.md) records source revisions, overlap, and important limitations.
+**Latest source update: 17 October 2026 (Europe/Dublin).** Each entry carries its own review date; this date does not imply that every upstream changed or was re-reviewed on the same day. None has been installed or run with Bob by this catalogue. The machine-readable [catalogue](catalog/projects.json) records the evidence and review date for each entry. The [comparison review](docs/comparison-review.md) records source revisions, overlap, and important limitations.
 
 ## Find a useful starting point
 
@@ -50,7 +50,7 @@ See the [curation policy](docs/curation.md) and [metadata format](docs/metadata.
 
 Spec Kit supplies structured development processes and reusable templates. Its integration guide explicitly lists IBM Bob under the `bob` key. The default writes `speckit-<command>/SKILL.md` files into `.bob/skills/` and uses `/speckit-<command>` invocation. The guide distinguishes the deprecated Bob 1.x command layout and migration, and documents hash-tracked installation and preservation of modified files on uninstall.
 
-It also includes a separate [bug workflow](https://github.com/github/spec-kit/blob/0443760542e7e5269724744a2ac55c4bd386d095/extensions/bug/README.md): assess, fix, and test, with per-bug reports and explicit partial/not-run verification. Useful for specifications or scoped fixes. The observed release was [v1.1.3](https://github.com/github/spec-kit/releases/tag/v1.1.3); installation and runtime dispatch were not executed here.
+It also includes a separate [bug workflow](https://github.com/github/spec-kit/blob/9dca9bf42a031765ee5e5f2371137f2f26967e11/extensions/bug/README.md): assess, fix, and test, with per-bug reports and explicit partial/not-run verification. Useful for specifications or scoped fixes. The reviewed release is [v1.2.1, published 16 October 2026](https://github.com/github/spec-kit/releases/tag/v1.2.1). It adds opt-in, per-stream-limited workflow output capture with timeout/interruption fields and process-tree cleanup, plus catalogue trust and source-precedence guidance. Captured text is stored unredacted and is explicitly treated as untrusted; installation and runtime dispatch were not executed here.
 
 ### Verified Codebase Context
 
@@ -58,7 +58,7 @@ It also includes a separate [bug workflow](https://github.com/github/spec-kit/bl
 
 A Spec Kit community preset for established repositories. It generates `.specify/memory/codebase.md` from repository evidence, preserves a manual overrides section, and makes plan/tasks/analyze/implement consult that context. Code graphs are optional; direct reads and search are the baseline. The generator records build and test commands without executing them.
 
-The four consumer commands replace core files and target **Spec Kit 1.1.2**; later versions require review. The documented test matrix names Codex, Claude, Copilot, and Gemini, not Bob. Its Bob connection is through Spec Kit's integration, and this catalogue has not established Bob compatibility. If using it, refer to its context from other workflows rather than maintain a second authoritative profile.
+The four consumer commands replace core files and target **Spec Kit 1.1.2**. The now-current Spec Kit 1.2.1 release is outside that stated baseline, so treat the combination as requiring a compatibility review rather than assuming it is safe. The documented test matrix names Codex, Claude, Copilot, and Gemini, not Bob. Its Bob connection is through Spec Kit's integration, and this catalogue has not established Bob compatibility. If using it, refer to its context from other workflows rather than maintain a second authoritative profile.
 
 ## Learning and examples
 
@@ -86,7 +86,9 @@ Useful as task examples, with installation instructions to review before trying 
 
 IBM Build Engineering reference implementations include domain skills and runnable integration assets. A public skills ZIP and [Bob+ 1.1.0 VSIX](https://github.com/ibm-self-serve-assets/building-blocks/tree/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/extension) are present. The [1.1.0 changelog](https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/extension/CHANGELOG.md) describes Building Blocks and Specs, removal of the Modes panel, and automatic configuration of required MCP servers.
 
-The older website guide still describes modes, so use the versioned source when checking behavior. The binary was not downloaded or run here. Choose domain assets individually and review their configuration effects. Preserve [asset-level license notices](https://github.com/ibm-self-serve-assets/building-blocks/blob/5c610971dc72f9e9035821b3cb2c3edea868f8b4/ibm-bob/skills/LICENSE.txt).
+The main branch added a [Granite TTM forecasting skill](https://github.com/ibm-self-serve-assets/building-blocks/blob/36e24f5bbab28fac99c2a0a20deeaf2f423dd35b/ibm-bob/skills/ttm-forecasting/SKILL.md) on 14 October 2026. Its source routes among watsonx.ai, a local Hugging Face pipeline, and a mock path, and separates inference, dashboard, and fleet guidance. On 15 October, the upstream [generated skills catalogue](https://github.com/ibm-self-serve-assets/building-blocks/blob/f422bb7b98614fdc1fff08a8fb800c86eee5c66f/explore-BBs/bb-catalog/skills/ttm-forecasting.md) marked it active and exposed a generated ZIP download. This is source and distribution evidence only: the catalogue did not download or extract the archive, install the skill, download model weights, call watsonx.ai, or reproduce its production and performance claims. Review the archive and the selected path's credentials, network, storage, and dependency requirements before use; the mock path is explicitly non-production.
+
+The older website guide still describes modes, so use the versioned source when checking behavior. The binary and skills ZIP were not downloaded or run here. Choose domain assets individually and review their configuration effects. Preserve [asset-level license notices](https://github.com/ibm-self-serve-assets/building-blocks/blob/36e24f5bbab28fac99c2a0a20deeaf2f423dd35b/ibm-bob/skills/LICENSE.txt).
 
 ## Orchestration and services
 
